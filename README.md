@@ -23,3 +23,23 @@
    .venv\Scripts\activate
    # Linux/macOS:
    source .venv/bin/activate
+
+---
+
+## Результаты тестирования и демонстрация работы
+
+### 1. Проверка доступности (/health)
+Сервис корректно отвечает на запросы проверки состояния.
+![Health Check](docs/images/01_health_check.png)
+
+### 2. Успешный обработанный запрос (/process)
+При первичном запросе вызывается LLM-модель, а результат сохраняется в кеш (`cached: false`).
+![Success Request](docs/images/02_success_request.png)
+
+### 3. Работа TTL-кеширования (Cache Hit)
+Повторный идентичный запрос возвращается мгновенно из кеша без вызова внешнего API (`cached: true`).
+![Cache Hit](docs/images/03_cache_hit.png)
+
+### 4. Автоматические тесты (pytest)
+Все unit-тесты для эндпоинтов и логики сервиса проходят успешно.
+![Pytest Passed](docs/images/04_pytest_results.png) 
