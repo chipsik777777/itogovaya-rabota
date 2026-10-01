@@ -43,3 +43,4 @@
 ### 4. Автоматические тесты (pytest)
 Все unit-тесты для эндпоинтов и логики сервиса проходят успешно.
 ![Pytest Passed](docs/images/04_pytest_results.png) 
+
